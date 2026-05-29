@@ -30,10 +30,10 @@ Target balance:
 
 The positive class is moderately imbalanced, but not extremely rare.
 
-Date fields use values like `Dec-2015`. Parse them with:
+Date fields use values like `Dec-2015`. Avoid `format="%b-%Y"` on machines where the OS locale is not English, because `%b` depends on localized month names. Use the notebook helper `parse_english_month_year()` instead:
 
 ```python
-pd.to_datetime(df["issue_d"].str.strip(), format="%b-%Y", errors="coerce")
+df["issue_date"] = parse_english_month_year(df["issue_d"])
 ```
 
 Known `issue_d` range:
@@ -357,11 +357,10 @@ Questions to resolve or mention as limitations:
 Before presenting or handing off:
 
 - Confirm all numeric facts match the notebook outputs.
-- Confirm date parsing uses `format="%b-%Y"`.
+- Confirm date parsing uses the locale-safe `parse_english_month_year()` helper.
 - Confirm post-origination leakage fields are excluded from the final model.
 - Confirm the document clearly distinguishes valid features, diagnostic features, and invalid leakage features.
 - Confirm validation uses chronological splits for final evidence.
 - Confirm SMOTE, if tested, is used only inside training folds.
 - Confirm model explanations are included.
 - Confirm regulatory and model-risk considerations are discussed, but not overstated as a full model-risk-management document.
-
