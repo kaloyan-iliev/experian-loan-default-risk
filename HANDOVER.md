@@ -244,6 +244,7 @@ Above-and-beyond business analysis:
 - Create default rate by predicted-risk decile.
 - Add lift/gains chart.
 - Simulate approval cutoffs and show the tradeoff between approval volume and expected default rate.
+- Include a small applicant-level scoring demo that converts estimated default probability into an illustrative internal risk score and risk band.
 
 This is likely to impress the audience more than focusing only on a single AUC number because it connects the model to actual credit decisioning.
 
@@ -350,7 +351,8 @@ Questions to resolve or mention as limitations:
 6. Compare clean, diagnostic, and leakage-demo model variants.
 7. Add calibration, threshold, and lift/gains analysis.
 8. Add explainability section.
-9. Prepare the short presentation using the structure above.
+9. Add applicant-level scoring demo using careful language: internal risk score, not bureau credit score.
+10. Prepare the short presentation using the structure above.
 
 ## Verification Checklist
 
