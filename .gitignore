@@ -1,0 +1,25 @@
+# Local environment
+.venv/
+venv/
+env/
+
+# Large/local data
+loan_processed_data.csv
+*.csv
+
+# Notebook/editor artifacts
+.ipynb_checkpoints/
+notebook copy.ipynb
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Model/output artifacts
+models/
+outputs/
+artifacts/
+*.pkl
+*.joblib
+
